@@ -11,12 +11,15 @@ import org.openqa.selenium.support.PageFactory;
  */
 // test1
 public class Context extends Pagebase{
-    private static Context context;
+    private static Context context = new Context();;
 
     private Context()
     {
         PageFactory.initElements(driver, this);
     }
+    @FindBy(xpath = "//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-front']//button[1]")
+    private static WebElement closeRegWinElement;
+
     @FindBy(xpath = "//*[@class='sign-up-item']//span[1]")
     private static WebElement sigh_upElement;
 
@@ -51,7 +54,7 @@ public class Context extends Pagebase{
     public static WebElement regWindowElement;
 
     public static void initInstance(String siteURL) {
-        context = new Context();
+        //context = new Context();
         context.setURL(siteURL);
         start();
     }
@@ -82,15 +85,15 @@ public class Context extends Pagebase{
         setEmail(email);
     }
     public static void setEmail(String email) throws Exception {
-        if(email==null) {
+        if(email==null || email=="") {
             String symbols = "qwertyuiopasdfghjklzxcvbnm1234567890";
             StringBuilder randString = new StringBuilder();
             int count = (int) (Math.random() * 25);
             for (int i = 0; i < count; i++)
                 randString.append(symbols.charAt((int) (Math.random() * symbols.length())));
-            email=randString.toString();
+            email=randString.toString() + "@test.ru";
         }
-        emailElement.sendKeys(email + "@test.ru");
+        emailElement.sendKeys(email );
         Thread.sleep(1000);
     }
 
@@ -139,6 +142,44 @@ public class Context extends Pagebase{
             return true;
         }
         return false;
+    }
+    public static void fillLongForm(String firstName,String lastName,String email,String password) throws Exception
+    {
+        pushSignup();
+        setFirstname(firstName);
+        setLastname(lastName);
+        setEmail(email);
+        setPassword(password);
+        setNumber();
+        pushAgreement();
+        pushDate();
+
+    }
+    public static void fillLongFormWoAgreement(String firstName,String lastName,String email,String password) throws Exception
+    {
+        pushSignup();
+        setFirstname(firstName);
+        setLastname(lastName);
+        setEmail(email);
+        setPassword(password);
+        setNumber();
+        pushDate();
+
+    }
+
+    public static void fillShortForm(String email,String password) throws Exception
+    {
+        pushSignup();
+        setEmail(email);
+        setPassword(password);
+        pushAgreement();
+
+    }
+
+    public static void pushCloseRegWindow() throws Exception
+    {
+        closeRegWinElement.click();
+        Thread.sleep(2000);
     }
 
 
