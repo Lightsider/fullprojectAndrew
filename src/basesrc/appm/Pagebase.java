@@ -1,3 +1,5 @@
+package basesrc.appm;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -7,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public abstract class Pagebase {
 
     static String siteUrl;
-    static WebDriver driver = new FirefoxDriver();
+    protected static WebDriver driver = new FirefoxDriver();
 
     public static String getURL()
     {
@@ -17,7 +19,7 @@ public abstract class Pagebase {
     {
         this.siteUrl=url;
     }
-    static void close() {
+    public static void close() {
         driver.quit();
     }
     private static void startBrowser() throws Exception

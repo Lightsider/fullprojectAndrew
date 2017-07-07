@@ -1,11 +1,16 @@
+package tests;
+
+import basesrc.appm.Pagebase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 /**
  * Created by andrey.popov on 06.07.2017.
  */
-public class Testbase extends Pagebase{
+
+public class Testbase extends Pagebase {
 
     @FindBy(className = "fake-dialog-close")
     private static WebElement closeDialogElement;

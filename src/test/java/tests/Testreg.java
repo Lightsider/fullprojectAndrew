@@ -1,8 +1,10 @@
+package tests;
+
+import basesrc.appm.Context;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 
 /**
  * Created by andrey.popov on 05.07.2017.

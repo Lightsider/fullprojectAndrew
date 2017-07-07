@@ -1,3 +1,5 @@
+package basesrc.appm;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,7 +50,7 @@ public class Context extends Pagebase{
     @FindBy(className = "register-view white-side has-social-login")
     public static WebElement regWindowElement;
 
-    static void initInstance(String siteURL) {
+    public static void initInstance(String siteURL) {
         context = new Context();
         context.setURL(siteURL);
         start();
@@ -58,7 +60,7 @@ public class Context extends Pagebase{
         return siteUrl;
     }
 
-    static void pushSignup() throws Exception {
+    public static void pushSignup() throws Exception {
         sigh_upElement.click();
         Thread.sleep(5000);
     }
@@ -74,12 +76,12 @@ public class Context extends Pagebase{
     }
 
 
-    static void setEmail() throws Exception
+    public static void setEmail() throws Exception
     {
         String email=null;
         setEmail(email);
     }
-    private static void setEmail(String email) throws Exception {
+    public static void setEmail(String email) throws Exception {
         if(email==null) {
             String symbols = "qwertyuiopasdfghjklzxcvbnm1234567890";
             StringBuilder randString = new StringBuilder();
@@ -92,7 +94,7 @@ public class Context extends Pagebase{
         Thread.sleep(1000);
     }
 
-    static void setPassword(String password)  throws Exception{
+    public static void setPassword(String password)  throws Exception{
         passwordElement.sendKeys(password);
         Thread.sleep(1000);
     }
@@ -111,21 +113,21 @@ public class Context extends Pagebase{
 
     }
 
-    static void pushAgreement() throws Exception {
+    public static void pushAgreement() throws Exception {
         agreementElement.click();
         Thread.sleep(1000);
     }
 
-    static void pushRegisterButton() throws Exception {
+    public static void pushRegisterButton() throws Exception {
         registerElement.click();
         Thread.sleep(10000);
     }
-    static WebDriver getDriver()
+    public static WebDriver getDriver()
     {
         return driver;
     }
 
-    static boolean checkRegisterWindow() {
+    public static boolean checkRegisterWindow() {
         try
         {
             Thread.sleep(5000);
