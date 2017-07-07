@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by andrey.popov on 06.07.2017.
  */
+// test1
 public class Context extends Pagebase{
     private static Context context;
 
