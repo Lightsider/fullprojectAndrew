@@ -5,23 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by andrey.popov on 06.07.2017.
  */
 // test1
-public class Context extends Pagebase{
-    private static Context context = new Context();;
+public class RegPage extends Pagebase{
+    private static RegPage context = new RegPage();
 
-    private Context()
+    private RegPage()
     {
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-front']//button[1]")
     private static WebElement closeRegWinElement;
-
-    @FindBy(xpath = "//*[@class='sign-up-item']//span[1]")
-    private static WebElement sigh_upElement;
 
     @FindBy(name = "firstName")
     private static WebElement firstnameElement;
@@ -44,7 +43,7 @@ public class Context extends Pagebase{
     @FindBy(xpath = "//div[@id=\"ui-datepicker-div\"]//*[@class=\"a-btn a-btn-blue\"]")
     private static WebElement dataElement;
 
-    @FindBy(name = "agreement")
+    @FindBy(id = "agreement")
     private static WebElement agreementElement;
 
     @FindBy(xpath = "//*[@class='modal-footer']//input")
@@ -54,7 +53,6 @@ public class Context extends Pagebase{
     public static WebElement regWindowElement;
 
     public static void initInstance(String siteURL) {
-        //context = new Context();
         context.setURL(siteURL);
         start();
     }
@@ -65,17 +63,21 @@ public class Context extends Pagebase{
 
     public static void pushSignup() throws Exception {
         sigh_upElement.click();
-        Thread.sleep(5000);
+        wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOf(firstnameElement));
     }
 
     public static void setFirstname(String firstName) throws Exception {
         firstnameElement.sendKeys(firstName);
-        Thread.sleep(1000);
+        wait = new WebDriverWait(driver, 1);
+        wait.until(ExpectedConditions.visibilityOf(lastnameElement));
+
     }
 
     public static void setLastname(String lastName) throws Exception {
         lastnameElement.sendKeys(lastName);
-        Thread.sleep(1000);
+        wait = new WebDriverWait(driver, 1);
+        wait.until(ExpectedConditions.visibilityOf(lastnameElement));
     }
 
 
@@ -94,36 +96,45 @@ public class Context extends Pagebase{
             email=randString.toString() + "@test.ru";
         }
         emailElement.sendKeys(email );
-        Thread.sleep(1000);
+        wait = new WebDriverWait(driver, 1);
+        wait.until(ExpectedConditions.visibilityOf(passwordElement));
     }
 
     public static void setPassword(String password)  throws Exception{
         passwordElement.sendKeys(password);
-        Thread.sleep(1000);
+        wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOf(phoneElement));
     }
 
     public static void setNumber() throws Exception {
         phoneElement.sendKeys("+78005553535");
-        Thread.sleep(1000);
+        wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.elementToBeClickable(birthDayElement));
     }
 
     public static void pushDate() throws Exception {
-
         birthDayElement.click();
-        Thread.sleep(2000);
+        wait = new WebDriverWait(driver, 2);
+        wait.until(ExpectedConditions.visibilityOf(dataElement));
         dataElement.click();
-        Thread.sleep(2000);
-
     }
 
     public static void pushAgreement() throws Exception {
         agreementElement.click();
-        Thread.sleep(1000);
     }
 
     public static void pushRegisterButton() throws Exception {
+        Thread.sleep(1000);
         registerElement.click();
-        Thread.sleep(10000);
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(profileNameElement));
+    }
+
+    public static void pushRegisterButtonInvDate() throws Exception {
+        Thread.sleep(1000);
+        registerElement.click();
+        wait = new WebDriverWait(driver, 3);
+        wait.until(ExpectedConditions.visibilityOf(emailElement));
     }
     public static WebDriver getDriver()
     {
@@ -133,7 +144,8 @@ public class Context extends Pagebase{
     public static boolean checkRegisterWindow() {
         try
         {
-            Thread.sleep(5000);
+            wait = new WebDriverWait(driver, 5);
+            wait.until(ExpectedConditions.elementToBeClickable(profileNameElement));
             driver.findElement(By.className("register-view white-side has-social-login"));
             //regWindowElement;???
         }
@@ -166,6 +178,13 @@ public class Context extends Pagebase{
         pushDate();
 
     }
+    public static void fillShortFormWoAgreement(String email,String password) throws Exception
+    {
+        pushSignup();
+        setEmail(email);
+        setPassword(password);
+        pushDate();
+    }
 
     public static void fillShortForm(String email,String password) throws Exception
     {
@@ -179,7 +198,8 @@ public class Context extends Pagebase{
     public static void pushCloseRegWindow() throws Exception
     {
         closeRegWinElement.click();
-        Thread.sleep(2000);
+        wait = new WebDriverWait(driver, 2);
+        wait.until(ExpectedConditions.elementToBeClickable(profileNavElement));
     }
 
 

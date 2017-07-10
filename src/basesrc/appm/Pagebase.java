@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by andrey.popov on 06.07.2017.
@@ -12,14 +14,25 @@ public abstract class Pagebase {
 
     static String siteUrl;
     public static WebDriver driver = new FirefoxDriver();
+    static WebDriverWait wait;
+
+    @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
+    protected static WebElement profileNameElement;
+
     @FindBy(className = "fake-dialog-close")
     private static WebElement closeDialogElement;
 
+    @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
+    protected static WebElement profileNavElementLogin;
+
     @FindBy(className = "profile-nav-inner")
-    private static WebElement profileNavElement;
+    protected static WebElement profileNavElement;
 
     @FindBy(xpath = "//div[@class='box-row profile-logout']//span[@class='a']")
-    private static WebElement logoutElement;
+    protected static WebElement logoutElement;
+
+    @FindBy(xpath = "//*[@class='sign-up-item']//span[1]")
+    protected static WebElement sigh_upElement;
 
     public static String getURL()
     {
@@ -36,14 +49,14 @@ public abstract class Pagebase {
     {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
         driver.manage().window().maximize();
-        Thread.sleep(2000);
     }
     static void start() {
         try
         {
             startBrowser();
             driver.get(siteUrl);
-            Thread.sleep(12000);
+            wait = new WebDriverWait(driver, 12);
+            wait.until(ExpectedConditions.elementToBeClickable(sigh_upElement));
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -52,11 +65,15 @@ public abstract class Pagebase {
     public static  void pushLogout() throws Exception
     {
         //closeDialogElement.click();
-        //Thread.sleep(2000);
+        Thread.sleep(1000);
+        wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.elementToBeClickable(profileNavElementLogin));
         profileNavElement.click();
-        Thread.sleep(2000);
+        wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.elementToBeClickable(logoutElement));
         logoutElement.click();
-        Thread.sleep(7000);
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(sigh_upElement));
 
     }
 
