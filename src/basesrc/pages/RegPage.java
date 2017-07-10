@@ -72,26 +72,26 @@ public class RegPage extends Pagebase {
         wait.until(ExpectedConditions.visibilityOf(firstnameElement));
     }
 
-    public static void setFirstname(String firstName) throws Exception {
+    public void setFirstname(String firstName) throws Exception {
         firstnameElement.sendKeys(firstName);
         wait = new WebDriverWait(driver, 1);
         wait.until(ExpectedConditions.visibilityOf(lastnameElement));
 
     }
 
-    public static void setLastname(String lastName) throws Exception {
+    public  void setLastname(String lastName) throws Exception {
         lastnameElement.sendKeys(lastName);
         wait = new WebDriverWait(driver, 1);
         wait.until(ExpectedConditions.visibilityOf(lastnameElement));
     }
 
 
-    public static void setEmail() throws Exception
+    public void setEmail() throws Exception
     {
         String email=null;
         setEmail(email);
     }
-    public static void setEmail(String email) throws Exception {
+    public void setEmail(String email) throws Exception {
         if(email==null || email=="") {
             email=randomString();
             email=email.toString() + "@test.ru";
@@ -101,19 +101,19 @@ public class RegPage extends Pagebase {
         wait.until(ExpectedConditions.visibilityOf(passwordElement));
     }
 
-    public static void setPassword(String password)  throws Exception{
+    public void setPassword(String password)  throws Exception{
         passwordElement.sendKeys(password);
         wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.visibilityOf(phoneElement));
     }
 
-    public static void setNumber() throws Exception {
+    public void setNumber() throws Exception {
         phoneElement.sendKeys("+78005553535");
         wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.elementToBeClickable(birthDayElement));
     }
 
-    public static void pushDate() throws Exception {
+    public void pushDate() throws Exception {
         birthDayElement.click();
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(dataElement));

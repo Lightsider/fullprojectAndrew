@@ -17,15 +17,15 @@ public class Pagebase {
         PageFactory.initElements(driver, this);
     }
 
-    static String siteUrl;
+    public String siteUrl;
     public static WebDriver driver;
-    static WebDriverWait wait;
+    public WebDriverWait wait;
 
     @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
     protected WebElement profileNameElement;
 
     @FindBy(className = "fake-dialog-close")
-    private WebElement closeDialogElement;
+    protected WebElement closeDialogElement;
 
     @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
     protected WebElement profileNavElementLogin;
@@ -39,7 +39,7 @@ public class Pagebase {
     @FindBy(xpath = "//*[@class='sign-up-item']//span[1]")
     protected WebElement sigh_upElement;
 
-    public static String getURL()
+    public String getURL()
     {
         return siteUrl;
     }
