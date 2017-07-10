@@ -1,4 +1,4 @@
-package basesrc.appm;
+package basesrc.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -53,6 +53,7 @@ public abstract class Pagebase {
     static void start() {
         try
         {
+            //driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
             startBrowser();
             driver.get(siteUrl);
             wait = new WebDriverWait(driver, 12);

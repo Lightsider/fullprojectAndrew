@@ -1,6 +1,6 @@
 package tests.registration;
 
-import basesrc.appm.Pagebase;
+import basesrc.pages.Pagebase;
 import org.openqa.selenium.WebDriver;
 
 

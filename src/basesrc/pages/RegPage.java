@@ -1,4 +1,4 @@
-package basesrc.appm;
+package basesrc.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,11 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static other.function.randomString;
+
+
 /**
  * Created by andrey.popov on 06.07.2017.
  */
 // test1
-public class RegPage extends Pagebase{
+public class RegPage extends Pagebase {
     private static RegPage context = new RegPage();
 
     private RegPage()
@@ -39,6 +42,9 @@ public class RegPage extends Pagebase{
 
     @FindBy(id = "birthDay")
     private static WebElement birthDayElement;
+
+    @FindBy(id = "ui-datepicker-div")
+    private static WebElement dataWindowElement;
 
     @FindBy(xpath = "//div[@id=\"ui-datepicker-div\"]//*[@class=\"a-btn a-btn-blue\"]")
     private static WebElement dataElement;
@@ -88,12 +94,8 @@ public class RegPage extends Pagebase{
     }
     public static void setEmail(String email) throws Exception {
         if(email==null || email=="") {
-            String symbols = "qwertyuiopasdfghjklzxcvbnm1234567890";
-            StringBuilder randString = new StringBuilder();
-            int count = (int) (Math.random() * 25);
-            for (int i = 0; i < count; i++)
-                randString.append(symbols.charAt((int) (Math.random() * symbols.length())));
-            email=randString.toString() + "@test.ru";
+            email=randomString();
+            email=email.toString() + "@test.ru";
         }
         emailElement.sendKeys(email );
         wait = new WebDriverWait(driver, 1);
@@ -102,13 +104,13 @@ public class RegPage extends Pagebase{
 
     public static void setPassword(String password)  throws Exception{
         passwordElement.sendKeys(password);
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.visibilityOf(phoneElement));
     }
 
     public static void setNumber() throws Exception {
         phoneElement.sendKeys("+78005553535");
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.elementToBeClickable(birthDayElement));
     }
 
@@ -117,6 +119,8 @@ public class RegPage extends Pagebase{
         wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.visibilityOf(dataElement));
         dataElement.click();
+        wait = new WebDriverWait(driver, 2);
+        wait.until(ExpectedConditions.invisibilityOf(dataWindowElement));
     }
 
     public static void pushAgreement() throws Exception {
@@ -124,14 +128,12 @@ public class RegPage extends Pagebase{
     }
 
     public static void pushRegisterButton() throws Exception {
-        Thread.sleep(1000);
         registerElement.click();
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(profileNameElement));
     }
 
     public static void pushRegisterButtonInvDate() throws Exception {
-        Thread.sleep(1000);
         registerElement.click();
         wait = new WebDriverWait(driver, 3);
         wait.until(ExpectedConditions.visibilityOf(emailElement));
@@ -144,7 +146,7 @@ public class RegPage extends Pagebase{
     public static boolean checkRegisterWindow() {
         try
         {
-            wait = new WebDriverWait(driver, 5);
+            wait = new WebDriverWait(driver, 2);
             wait.until(ExpectedConditions.elementToBeClickable(profileNameElement));
             driver.findElement(By.className("register-view white-side has-social-login"));
             //regWindowElement;???

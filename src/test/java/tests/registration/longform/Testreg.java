@@ -1,6 +1,6 @@
 package tests.registration.longform;
 
-import basesrc.appm.RegPage;
+import basesrc.pages.RegPage;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
