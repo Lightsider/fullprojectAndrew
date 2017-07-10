@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,9 +17,9 @@ import static other.function.randomString;
 public class RegPage extends Pagebase {
     private static RegPage context = new RegPage();
 
-    private RegPage()
+    public RegPage()
     {
-        PageFactory.initElements(driver, this);
+        super();
     }
     @FindBy(xpath = "//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-front']//button[1]")
     private static WebElement closeRegWinElement;
@@ -58,7 +57,7 @@ public class RegPage extends Pagebase {
     @FindBy(className = "register-view white-side has-social-login")
     public static WebElement regWindowElement;
 
-    public static void initInstance(String siteURL) {
+    public void initInstance(String siteURL) {
         context.setURL(siteURL);
         start();
     }
@@ -67,7 +66,7 @@ public class RegPage extends Pagebase {
         return siteUrl;
     }
 
-    public static void pushSignup() throws Exception {
+    public void pushSignup() throws Exception {
         sigh_upElement.click();
         wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(firstnameElement));
@@ -116,10 +115,10 @@ public class RegPage extends Pagebase {
 
     public static void pushDate() throws Exception {
         birthDayElement.click();
-        wait = new WebDriverWait(driver, 2);
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(dataElement));
         dataElement.click();
-        wait = new WebDriverWait(driver, 2);
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.invisibilityOf(dataWindowElement));
     }
 
@@ -127,13 +126,13 @@ public class RegPage extends Pagebase {
         agreementElement.click();
     }
 
-    public static void pushRegisterButton() throws Exception {
+    public void pushRegisterButton() throws Exception {
         registerElement.click();
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(profileNameElement));
     }
 
-    public static void pushRegisterButtonInvDate() throws Exception {
+    public void pushRegisterButtonInvDate() throws Exception {
         registerElement.click();
         wait = new WebDriverWait(driver, 3);
         wait.until(ExpectedConditions.visibilityOf(emailElement));
@@ -143,7 +142,7 @@ public class RegPage extends Pagebase {
         return driver;
     }
 
-    public static boolean checkRegisterWindow() {
+    public boolean checkRegisterWindow() {
         try
         {
             wait = new WebDriverWait(driver, 2);
@@ -157,7 +156,7 @@ public class RegPage extends Pagebase {
         }
         return false;
     }
-    public static void fillLongForm(String firstName,String lastName,String email,String password) throws Exception
+    public void fillLongForm(String firstName,String lastName,String email,String password) throws Exception
     {
         pushSignup();
         setFirstname(firstName);
@@ -169,7 +168,7 @@ public class RegPage extends Pagebase {
         pushDate();
 
     }
-    public static void fillLongFormWoAgreement(String firstName,String lastName,String email,String password) throws Exception
+    public void fillLongFormWoAgreement(String firstName,String lastName,String email,String password) throws Exception
     {
         pushSignup();
         setFirstname(firstName);
@@ -180,7 +179,7 @@ public class RegPage extends Pagebase {
         pushDate();
 
     }
-    public static void fillShortFormWoAgreement(String email,String password) throws Exception
+    public void fillShortFormWoAgreement(String email,String password) throws Exception
     {
         pushSignup();
         setEmail(email);
@@ -188,7 +187,7 @@ public class RegPage extends Pagebase {
         pushDate();
     }
 
-    public static void fillShortForm(String email,String password) throws Exception
+    public void fillShortForm(String email,String password) throws Exception
     {
         pushSignup();
         setEmail(email);
@@ -197,7 +196,7 @@ public class RegPage extends Pagebase {
 
     }
 
-    public static void pushCloseRegWindow() throws Exception
+    public void pushCloseRegWindow() throws Exception
     {
         closeRegWinElement.click();
         wait = new WebDriverWait(driver, 2);

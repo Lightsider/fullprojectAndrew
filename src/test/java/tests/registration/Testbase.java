@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Created by andrey.popov on 06.07.2017.
  */
-public class Testsbase extends Pagebase {
+public class Testbase extends Pagebase {
 
 
     public static WebDriver getDriver()

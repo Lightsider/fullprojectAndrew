@@ -4,35 +4,40 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 /**
  * Created by andrey.popov on 06.07.2017.
  */
-public abstract class Pagebase {
+public class Pagebase {
+    public Pagebase(){
+        PageFactory.initElements(driver, this);
+    }
 
     static String siteUrl;
-    public static WebDriver driver = new FirefoxDriver();
+    public static WebDriver driver;
     static WebDriverWait wait;
 
     @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
-    protected static WebElement profileNameElement;
+    protected WebElement profileNameElement;
 
     @FindBy(className = "fake-dialog-close")
-    private static WebElement closeDialogElement;
+    private WebElement closeDialogElement;
 
     @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
-    protected static WebElement profileNavElementLogin;
+    protected WebElement profileNavElementLogin;
 
     @FindBy(className = "profile-nav-inner")
-    protected static WebElement profileNavElement;
+    protected WebElement profileNavElement;
 
     @FindBy(xpath = "//div[@class='box-row profile-logout']//span[@class='a']")
-    protected static WebElement logoutElement;
+    protected WebElement logoutElement;
 
     @FindBy(xpath = "//*[@class='sign-up-item']//span[1]")
-    protected static WebElement sigh_upElement;
+    protected WebElement sigh_upElement;
 
     public static String getURL()
     {
@@ -48,14 +53,18 @@ public abstract class Pagebase {
     private static void startBrowser() throws Exception
     {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS) ;
     }
-    static void start() {
+    public void start() {
         try
         {
-            //driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+
             startBrowser();
+
             driver.get(siteUrl);
+
             wait = new WebDriverWait(driver, 12);
             wait.until(ExpectedConditions.elementToBeClickable(sigh_upElement));
         }
@@ -63,7 +72,7 @@ public abstract class Pagebase {
             e.printStackTrace();
         }
     }
-    public static  void pushLogout() throws Exception
+    public void pushLogout() throws Exception
     {
         //closeDialogElement.click();
         Thread.sleep(1000);

@@ -2,22 +2,22 @@ package tests.registration.longform;
 
 import basesrc.pages.RegPage;
 import org.assertj.core.api.Assertions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import tests.registration.Testsbase;
+import tests.registration.Testbase;
 
 /**
  * Created by andrey.popov on 05.07.2017.
  */
 
-public class Testreg extends Testsbase {
+public class TestregLong extends Testbase {
 
-    public static RegPage cont;
+    public RegPage cont = new RegPage();
 
 
 
-    @BeforeTest
+    @BeforeMethod
     public void before()
     {
         cont.initInstance( "https://libertex-fxb3-test.web.test.fxclub.org");
@@ -57,10 +57,9 @@ public class Testreg extends Testsbase {
         cont.pushCloseRegWindow();
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void after(){
         cont.close();
-        cont = null;
     }
 
 }
