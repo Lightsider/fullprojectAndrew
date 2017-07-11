@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,13 +14,13 @@ import static other.function.randomString;
 /**
  * Created by andrey.popov on 06.07.2017.
  */
-// test1
-public class RegPage extends Pagebase {
-    private static RegPage context = new RegPage();
+public class RegPage extends Pageebase {
+
 
     public RegPage()
     {
-        super();
+        initInstance( "https://libertex-fxb3-test.web.test.fxclub.org");
+        PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-front']//button[1]")
     private static WebElement closeRegWinElement;
@@ -58,7 +59,7 @@ public class RegPage extends Pagebase {
     public static WebElement regWindowElement;
 
     public void initInstance(String siteURL) {
-        context.setURL(siteURL);
+        setURL(siteURL);
         start();
     }
 
@@ -67,7 +68,7 @@ public class RegPage extends Pagebase {
     }
 
     public void pushSignup() throws Exception {
-        sigh_upElement.click();
+        signupElement.click();
         wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(firstnameElement));
     }
@@ -137,7 +138,7 @@ public class RegPage extends Pagebase {
         wait = new WebDriverWait(driver, 3);
         wait.until(ExpectedConditions.visibilityOf(emailElement));
     }
-    public static WebDriver getDriver()
+    public WebDriver getDriver()
     {
         return driver;
     }

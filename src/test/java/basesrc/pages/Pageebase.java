@@ -12,14 +12,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by andrey.popov on 06.07.2017.
  */
-public class Pagebase {
-    public Pagebase(){
-        PageFactory.initElements(driver, this);
+public class Pageebase {
+
+    public static String siteUrl;
+    //public  ApppManager app = new ApppManager();
+    public WebDriverWait wait;
+    public static WebDriver driver;// = new FirefoxDriver();
+
+
+    public Pageebase() {
+        //PageFactory.initElements(driver, this);
     }
 
-    public String siteUrl;
-    public static WebDriver driver;
-    public WebDriverWait wait;
+    public void setDriver(WebDriver driv)
+    {
+        this.driver = driv;
+    }
+
+    public WebDriver getDriver()
+    {
+        return driver;
+    }
 
     @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
     protected WebElement profileNameElement;
@@ -37,7 +50,8 @@ public class Pagebase {
     protected WebElement logoutElement;
 
     @FindBy(xpath = "//*[@class='sign-up-item']//span[1]")
-    protected WebElement sigh_upElement;
+    protected WebElement signupElement;
+
 
     public String getURL()
     {
@@ -47,26 +61,23 @@ public class Pagebase {
     {
         this.siteUrl=url;
     }
-    public static void close() {
-        driver.quit();
+    public void close() {
+        driver.close();
     }
-    private static void startBrowser() throws Exception
+    public void startBrowser()
     {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS) ;
     }
     public void start() {
         try
         {
-
             startBrowser();
-
             driver.get(siteUrl);
-
+            PageFactory.initElements(driver, this);
             wait = new WebDriverWait(driver, 12);
-            wait.until(ExpectedConditions.elementToBeClickable(sigh_upElement));
+            wait.until(ExpectedConditions.elementToBeClickable(signupElement));
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -83,7 +94,7 @@ public class Pagebase {
         wait.until(ExpectedConditions.elementToBeClickable(logoutElement));
         logoutElement.click();
         wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(sigh_upElement));
+        wait.until(ExpectedConditions.elementToBeClickable(signupElement));
 
     }
 

@@ -5,22 +5,25 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import tests.registration.Testbase;
+import tests.registration.Testsbase;
 
 /**
  * Created by andrey.popov on 05.07.2017.
  */
 
-public class TestregLong extends Testbase {
+public class TestregLong extends Testsbase {
 
-    public RegPage cont = new RegPage();
+    public RegPage cont;// = new RegPage();
 
+    public TestregLong() {
+       // super();
+    }
 
 
     @BeforeMethod
     public void before()
     {
-        cont.initInstance( "https://libertex-fxb3-test.web.test.fxclub.org");
+        cont = new RegPage();
     }
 
     @Test

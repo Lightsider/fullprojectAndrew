@@ -5,16 +5,19 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import tests.registration.Testbase;
+import tests.registration.Testsbase;
 
 /**
  * Created by andrey.popov on 05.07.2017.
  */
 
-public class TestregShort extends Testbase {
+public class TestregShort extends Testsbase {
 
-    public static RegPage cont;
+    public RegPage cont;
 
+    public TestregShort() throws Exception {
+        //super();
+    }
 
 
     @BeforeMethod
