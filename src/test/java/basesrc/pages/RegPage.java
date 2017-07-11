@@ -1,5 +1,7 @@
 package basesrc.pages;
 
+import basesrc.core.AppManager;
+import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,20 +10,24 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static other.function.randomString;
+import static helpers.function.randomString;
 
 
 /**
  * Created by andrey.popov on 06.07.2017.
  */
-public class RegPage extends Pageebase {
+
+@Data
+public class RegPage extends Pagebase {
 
 
-    public RegPage()
+    public RegPage(AppManager app)
     {
+        super(app);
         initInstance( "https://libertex-fxb3-test.web.test.fxclub.org");
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(getApp().getDriver(), this);
     }
+
     @FindBy(xpath = "//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-front']//button[1]")
     private static WebElement closeRegWinElement;
 
@@ -60,7 +66,7 @@ public class RegPage extends Pageebase {
 
     public void initInstance(String siteURL) {
         setURL(siteURL);
-        start();
+        //start();
     }
 
     public String getSiteUrl() {
@@ -125,6 +131,13 @@ public class RegPage extends Pageebase {
 
     public static void pushAgreement() throws Exception {
         agreementElement.click();
+    }
+
+    public void launch()
+    {
+        getApp().getDriver().get(getSiteUrl());
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(signupElement));
     }
 
     public void pushRegisterButton() throws Exception {

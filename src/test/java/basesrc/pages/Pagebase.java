@@ -1,10 +1,10 @@
 package basesrc.pages;
 
+import basesrc.core.AppManager;
+import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,27 +12,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by andrey.popov on 06.07.2017.
  */
-public class Pageebase {
+@Data
+public class Pagebase extends AppManager{
 
     public static String siteUrl;
-    //public  ApppManager app = new ApppManager();
+    public AppManager app;
     public WebDriverWait wait;
-    public static WebDriver driver;// = new FirefoxDriver();
 
-
-    public Pageebase() {
-        //PageFactory.initElements(driver, this);
-    }
-
-    public void setDriver(WebDriver driv)
-    {
-        this.driver = driv;
-    }
-
-    public WebDriver getDriver()
+    /*public WebDriver getDriver()
     {
         return driver;
-    }
+    }*/
 
     @FindBy(xpath = "//div[@class='profile-nav-inner']//span[@class='a-event drop-down-link']")
     protected WebElement profileNameElement;
@@ -53,18 +43,28 @@ public class Pageebase {
     protected WebElement signupElement;
 
 
+    public Pagebase(AppManager app){
+        this.app = app;
+    }
+
+    public void setDriver(WebDriver driv)
+    {
+        this.driver = driv;
+    }
+
     public String getURL()
     {
         return siteUrl;
     }
-    void setURL(String url)
+    public void setURL(String url)
     {
         this.siteUrl=url;
     }
     public void close() {
-        driver.close();
+        getApp().getDriver().manage().deleteAllCookies();
+        //getApp().getDriver().manage().;
     }
-    public void startBrowser()
+    /*public void startBrowser()
     {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
         driver = new FirefoxDriver();
@@ -82,7 +82,7 @@ public class Pageebase {
         catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
     public void pushLogout() throws Exception
     {
         //closeDialogElement.click();
