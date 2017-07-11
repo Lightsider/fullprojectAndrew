@@ -2,7 +2,6 @@ package basesrc.core;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeSuite;
 
 
 /**
@@ -11,7 +10,6 @@ import org.testng.annotations.BeforeSuite;
 public class Testbase /*extends Pagebase*/ {
     private AppManager app;
 
-    @BeforeSuite(alwaysRun = true)
     public void init(){
         app = new AppManager();
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");

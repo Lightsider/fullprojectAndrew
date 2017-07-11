@@ -18,6 +18,7 @@ public class TestregLong extends Testbase {
     @BeforeMethod
     public void before()
     {
+        init();
         selectPage = getApp().pagesHelper().regPage();
         selectPage.setURL("https://libertex-fxb3-test.web.test.fxclub.org/");
         selectPage.launch();

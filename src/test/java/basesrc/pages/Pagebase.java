@@ -61,7 +61,8 @@ public class Pagebase extends AppManager{
         this.siteUrl=url;
     }
     public void close() {
-        getApp().getDriver().manage().deleteAllCookies();
+        getApp().getDriver().close();
+        //getApp().getDriver().manage().deleteAllCookies();
         //getApp().getDriver().manage().;
     }
     /*public void startBrowser()
