@@ -7,9 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-/**
- * Created by andrey.popov on 05.07.2017.
- */
+
 
 public class TestShortInvalid extends Testbase {
     public RegPage selectPage;

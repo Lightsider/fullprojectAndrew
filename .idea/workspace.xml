@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69aceb0f-cb02-4dac-9554-d7b0f2c8e80e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestRegShortForm.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testing.xml" afterPath="$PROJECT_DIR$/TestRegLongForm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/basesrc/core/AppManager.java" afterPath="$PROJECT_DIR$/src/test/java/basesrc/core/AppManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/basesrc/core/Testbase.java" afterPath="$PROJECT_DIR$/src/test/java/basesrc/core/Testbase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/basesrc/pages/Pagebase.java" afterPath="$PROJECT_DIR$/src/test/java/basesrc/pages/Pagebase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/basesrc/pages/RegPage.java" afterPath="$PROJECT_DIR$/src/test/java/basesrc/pages/RegPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing.xml" afterPath="$PROJECT_DIR$/testing.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortInvalid.java" afterPath="$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortInvalid.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,11 +22,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RegPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/basesrc/pages/RegPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="62" column="11" lean-forward="false" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
+            <state relative-caret-position="153">
+              <caret line="132" column="78" lean-forward="false" selection-start-line="132" selection-start-column="78" selection-end-line="132" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,33 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/helpers/PageHelper.java">
+      <file leaf-file-name="TestRegLongForm.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestRegLongForm.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="70" lean-forward="false" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
+            <state relative-caret-position="187">
+              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/basesrc/core/AppManager.java">
+      <file leaf-file-name="PageHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/helpers/PageHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="255">
+              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,8 +85,8 @@
       <file leaf-file-name="TestInvalid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/longform/TestInvalid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="-17">
+              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding>
                 <element signature="e#433#434#0" expanded="true" />
                 <element signature="e#494#495#0" expanded="true" />
@@ -109,14 +95,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestWithoutPush.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/longform/TestWithoutPush.java">
+      <file leaf-file-name="TestShortInvalid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortInvalid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-              <folding>
-                <element signature="e#437#438#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="12" column="3" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestRegShortForm.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestRegShortForm.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,12 +118,19 @@
       <file leaf-file-name="TestValid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/longform/TestValid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-              <folding>
-                <element signature="e#431#432#0" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -164,8 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/test.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Page.java" />
         <option value="$PROJECT_DIR$/src/test/java/Register.java" />
         <option value="$PROJECT_DIR$/src/test/java/test.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test.java" />
@@ -206,7 +205,6 @@
         <option value="$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestregShort.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortWithoutPush.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortValid.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortInvalid.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/registration/longform/TestInvalid.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/registration/longform/TestValid.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/registration/longform/TestWithoutPush.java" />
@@ -215,6 +213,9 @@
         <option value="$PROJECT_DIR$/src/test/java/basesrc/core/AppManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/basesrc/pages/Pagebase.java" />
         <option value="$PROJECT_DIR$/src/test/java/basesrc/pages/RegPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortInvalid.java" />
+        <option value="$PROJECT_DIR$/.idea/TestRegShortForm.xml" />
+        <option value="$PROJECT_DIR$/TestRegShortForm.xml" />
       </list>
     </option>
   </component>
@@ -407,6 +408,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fullprojectAndrew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fullprojectAndrew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -419,12 +434,16 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FullProjectMP" />
-    <property name="add_unversioned_files" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TestRegShortForm.xml" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/TestRegShortForm.xml&#10;true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew" />
+      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\.idea" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew" />
@@ -445,7 +464,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.run">
+  <component name="RunManager" selected="TestNG.TestRegLong">
     <configuration default="false" name="TestShortInvalid" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -815,12 +834,12 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="run" type="TestNG" factoryName="TestNG">
+    <configuration default="false" name="TestRegLong" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="mytest" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testing.xml" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestRegLongForm.xml" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -843,13 +862,42 @@
       <listeners />
       <method />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.run" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.TestShortInvalid" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.TestShortWithoutPush" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.TestInvalid" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.TestWithoutPush" />
-      <item index="5" class="java.lang.String" itemvalue="TestNG.TestValid" />
+    <configuration default="false" name="TestRegShort" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="mytest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestRegShortForm.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="TestNG.TestRegLong" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.TestRegShort" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.TestShortInvalid" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.TestShortWithoutPush" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.TestInvalid" />
+      <item index="5" class="java.lang.String" itemvalue="TestNG.TestWithoutPush" />
+      <item index="6" class="java.lang.String" itemvalue="TestNG.TestValid" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1068,24 +1116,25 @@
       <option name="project" value="LOCAL" />
       <updated>1499840670933</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="12.07.2017 14:05&#10;Добавлена многопоточность, работающая">
+      <created>1499842999552</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1499842999552</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestInvalid - 2017.07.12 at 13h 21m 56s.xml">
-      <configuration name="TestInvalid" configurationId="TestNG" />
+    <history-entry file="TestRegLong - 2017.07.12 at 15h 01m 07s.xml">
+      <configuration name="TestRegLong" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestValid - 2017.07.12 at 13h 23m 07s.xml">
-      <configuration name="TestValid" configurationId="TestNG" />
+    <history-entry file="TestRegLong - 2017.07.12 at 15h 03m 04s.xml">
+      <configuration name="TestRegLong" configurationId="TestNG" />
     </history-entry>
     <history-entry file="TestValid - 2017.07.12 at 13h 24m 14s.xml">
       <configuration name="TestValid" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestWithoutPush - 2017.07.12 at 13h 22m 28s.xml">
-      <configuration name="TestWithoutPush" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestWithoutPush - 2017.07.12 at 13h 22m 38s.xml">
-      <configuration name="TestWithoutPush" configurationId="TestNG" />
     </history-entry>
     <history-entry file="run - 2017.07.12 at 13h 47m 08s.xml">
       <configuration name="run" configurationId="TestNG" />
@@ -1100,6 +1149,12 @@
       <configuration name="run" configurationId="TestNG" />
     </history-entry>
     <history-entry file="run - 2017.07.12 at 14h 01m 18s.xml">
+      <configuration name="run" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="run - 2017.07.12 at 14h 55m 25s.xml">
+      <configuration name="run" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="run - 2017.07.12 at 14h 56m 12s.xml">
       <configuration name="run" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -1158,7 +1213,8 @@
     <MESSAGE value="10.07.2017 13:00" />
     <MESSAGE value="10.07.2017 14:00" />
     <MESSAGE value="11.07.2017 15:40" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.07.2017 15:40" />
+    <MESSAGE value="12.07.2017 14:05&#10;Добавлена многопоточность, работающая" />
+    <option name="LAST_COMMIT_MESSAGE" value="12.07.2017 14:05&#10;Добавлена многопоточность, работающая" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1171,7 +1227,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mytest" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1191,14 +1246,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/target/test-classes/Context.class" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/basesrc/core/Testbase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1405,23 +1452,9 @@
         <state relative-caret-position="53">
           <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortInvalid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#2240#2241#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#462#463#0" expanded="false" />
+            <element signature="e#523#524#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1431,28 +1464,9 @@
         <state relative-caret-position="255">
           <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="70" lean-forward="false" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/longform/TestInvalid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding>
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#405#406#0" expanded="false" />
+            <element signature="e#466#467#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1467,21 +1481,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/longform/TestValid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/basesrc/core/AppManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1513,20 +1516,71 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/helpers/PageHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/longform/TestInvalid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/shortform/TestShortInvalid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="3" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestRegShortForm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/registration/longform/TestValid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/basesrc/pages/RegPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="62" column="11" lean-forward="false" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
+        <state relative-caret-position="153">
+          <caret line="132" column="78" lean-forward="false" selection-start-line="132" selection-start-column="78" selection-end-line="132" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestRegLongForm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
