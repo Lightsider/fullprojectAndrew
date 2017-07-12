@@ -1,0 +1,9 @@
+<suite name="TestSuite" verbose="1" parallel="classes" thread-count="3">
+    <test name="TestParallel" >
+        <classes>
+            <class name="tests.registration.shortform.TestShortValid"></class>
+            <class name="tests.registration.shortform.TestShortInvalid"></class>
+            <class name="tests.registration.shortform.TestShortWithoutPush"></class>
+        </classes>
+    </test>
+</suite>

@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @Data
 public class Pagebase extends AppManager{
 
-    public static String siteUrl;
+    public static String siteUrl="https://libertex-fxb3-test.web.test.fxclub.org/";
     public AppManager app;
     public WebDriverWait wait;
 
@@ -65,6 +65,13 @@ public class Pagebase extends AppManager{
         //getApp().getDriver().manage().deleteAllCookies();
         //getApp().getDriver().manage().;
     }
+
+
+    public void start()
+    {
+        getApp().getDriver().get(siteUrl);
+        getApp().getWait().until(ExpectedConditions.elementToBeClickable(signupElement));
+    }
     /*public void startBrowser()
     {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
@@ -86,16 +93,13 @@ public class Pagebase extends AppManager{
     }*/
     public void pushLogout() throws Exception
     {
-        //closeDialogElement.click();
         Thread.sleep(1000);
-        wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.elementToBeClickable(profileNavElementLogin));
+//        closeDialogElement.click();
+        getApp().getWait().until(ExpectedConditions.elementToBeClickable(profileNavElementLogin));
         profileNavElement.click();
-        wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.elementToBeClickable(logoutElement));
+        getApp().getWait().until(ExpectedConditions.elementToBeClickable(logoutElement));
         logoutElement.click();
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(signupElement));
+        getApp().getWait().until(ExpectedConditions.elementToBeClickable(signupElement));
 
     }
 

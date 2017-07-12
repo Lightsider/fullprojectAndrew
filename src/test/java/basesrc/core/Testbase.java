@@ -2,20 +2,17 @@ package basesrc.core;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
 
-
-/**
- * Created by andrey.popov on 06.07.2017.
- */
-public class Testbase /*extends Pagebase*/ {
+public class Testbase {
     private AppManager app;
 
+    @BeforeClass
     public void init(){
         app = new AppManager();
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
         app.setDriver(new FirefoxDriver());
-        app.getDriver().manage().window().maximize();
-        app.setWait(new WebDriverWait(app.getDriver(),10));
+        app.setWait(new WebDriverWait(app.getDriver(),12));
     }
 
     public AppManager getApp(){

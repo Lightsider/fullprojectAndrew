@@ -3,12 +3,10 @@ package basesrc.pages;
 import basesrc.core.AppManager;
 import lombok.Data;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static helpers.function.randomString;
 
@@ -24,7 +22,7 @@ public class RegPage extends Pagebase {
     public RegPage(AppManager app)
     {
         super(app);
-        initInstance( "https://libertex-fxb3-test.web.test.fxclub.org");
+        getApp().getDriver().manage().window().maximize();
         PageFactory.initElements(getApp().getDriver(), this);
     }
 
@@ -55,7 +53,7 @@ public class RegPage extends Pagebase {
     @FindBy(xpath = "//div[@id=\"ui-datepicker-div\"]//*[@class=\"a-btn a-btn-blue\"]")
     private static WebElement dataElement;
 
-    @FindBy(id = "agreement")
+    @FindBy(xpath = "//*[@for='agreement']")//@FindBy(id = "agreement")
     private static WebElement agreementElement;
 
     @FindBy(xpath = "//*[@class='modal-footer']//input")
@@ -75,21 +73,18 @@ public class RegPage extends Pagebase {
 
     public void pushSignup() throws Exception {
         signupElement.click();
-        wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(firstnameElement));
+        getApp().getWait().until(ExpectedConditions.visibilityOf(emailElement));
     }
 
     public void setFirstname(String firstName) throws Exception {
         firstnameElement.sendKeys(firstName);
-        wait = new WebDriverWait(driver, 1);
-        wait.until(ExpectedConditions.visibilityOf(lastnameElement));
+        getApp().getWait().until(ExpectedConditions.visibilityOf(lastnameElement));
 
     }
 
     public  void setLastname(String lastName) throws Exception {
         lastnameElement.sendKeys(lastName);
-        wait = new WebDriverWait(driver, 1);
-        wait.until(ExpectedConditions.visibilityOf(lastnameElement));
+        getApp().getWait().until(ExpectedConditions.visibilityOf(lastnameElement));
     }
 
 
@@ -104,29 +99,23 @@ public class RegPage extends Pagebase {
             email=email.toString() + "@test.ru";
         }
         emailElement.sendKeys(email );
-        wait = new WebDriverWait(driver, 1);
-        wait.until(ExpectedConditions.visibilityOf(passwordElement));
+        getApp().getWait().until(ExpectedConditions.visibilityOf(passwordElement));
     }
 
     public void setPassword(String password)  throws Exception{
         passwordElement.sendKeys(password);
-        wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.visibilityOf(phoneElement));
     }
 
     public void setNumber() throws Exception {
         phoneElement.sendKeys("+78005553535");
-        wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.elementToBeClickable(birthDayElement));
+        getApp().getWait().until(ExpectedConditions.elementToBeClickable(birthDayElement));
     }
 
     public void pushDate() throws Exception {
         birthDayElement.click();
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(dataElement));
+        getApp().getWait().until(ExpectedConditions.visibilityOf(dataElement));
         dataElement.click();
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.invisibilityOf(dataWindowElement));
+        getApp().getWait().until(ExpectedConditions.invisibilityOf(dataWindowElement));
     }
 
     public static void pushAgreement() throws Exception {
@@ -136,31 +125,23 @@ public class RegPage extends Pagebase {
     public void launch()
     {
         getApp().getDriver().get(getSiteUrl());
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(signupElement));
+        getApp().getWait().until(ExpectedConditions.visibilityOf(signupElement));
     }
 
     public void pushRegisterButton() throws Exception {
         registerElement.click();
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(profileNameElement));
+        getApp().getWait().until(ExpectedConditions.visibilityOf(profileNameElement));
     }
 
     public void pushRegisterButtonInvDate() throws Exception {
         registerElement.click();
-        wait = new WebDriverWait(driver, 3);
-        wait.until(ExpectedConditions.visibilityOf(emailElement));
-    }
-    public WebDriver getDriver()
-    {
-        return driver;
+        getApp().getWait().until(ExpectedConditions.visibilityOf(emailElement));
     }
 
     public boolean checkRegisterWindow() {
         try
         {
-            wait = new WebDriverWait(driver, 2);
-            wait.until(ExpectedConditions.elementToBeClickable(profileNameElement));
+            getApp().getWait().until(ExpectedConditions.elementToBeClickable(profileNameElement));
             driver.findElement(By.className("register-view white-side has-social-login"));
             //regWindowElement;???
         }
@@ -198,7 +179,6 @@ public class RegPage extends Pagebase {
         pushSignup();
         setEmail(email);
         setPassword(password);
-        pushDate();
     }
 
     public void fillShortForm(String email,String password) throws Exception
@@ -213,8 +193,7 @@ public class RegPage extends Pagebase {
     public void pushCloseRegWindow() throws Exception
     {
         closeRegWinElement.click();
-        wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.elementToBeClickable(profileNavElement));
+        getApp().getWait().until(ExpectedConditions.elementToBeClickable(profileNavElement));
     }
 
 
