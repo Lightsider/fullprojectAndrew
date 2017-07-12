@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Data
 public class AppManager {
-    public WebDriver driver;
+    private WebDriver driver;
     private PageHelper pageHelper;
     public WebDriverWait wait;
 

@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 public class Testbase {
     private AppManager app;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void init(){
         app = new AppManager();
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");

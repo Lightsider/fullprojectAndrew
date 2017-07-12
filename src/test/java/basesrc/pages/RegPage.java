@@ -22,50 +22,50 @@ public class RegPage extends Pagebase {
     public RegPage(AppManager app)
     {
         super(app);
-        getApp().getDriver().manage().window().maximize();
         PageFactory.initElements(getApp().getDriver(), this);
+        getApp().getDriver().manage().window().maximize();
     }
 
     @FindBy(xpath = "//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-front']//button[1]")
-    private static WebElement closeRegWinElement;
+    private WebElement closeRegWinElement;
 
     @FindBy(name = "firstName")
-    private static WebElement firstnameElement;
+    private WebElement firstnameElement;
 
     @FindBy(name = "lastName")
-    private static WebElement lastnameElement;
+    private WebElement lastnameElement;
 
     @FindBy(xpath = "//*[@class='modal-content']//input[@name='login']")
-    private static WebElement emailElement;
+    private WebElement emailElement;
 
     @FindBy(xpath = "//*[@class='modal-content']//input[@name='password']")
-    private static WebElement passwordElement;
+    private WebElement passwordElement;
 
     @FindBy(name = "phone")
-    private static WebElement phoneElement;
+    private WebElement phoneElement;
 
     @FindBy(id = "birthDay")
-    private static WebElement birthDayElement;
+    private WebElement birthDayElement;
 
     @FindBy(id = "ui-datepicker-div")
-    private static WebElement dataWindowElement;
+    private WebElement dataWindowElement;
 
     @FindBy(xpath = "//div[@id=\"ui-datepicker-div\"]//*[@class=\"a-btn a-btn-blue\"]")
-    private static WebElement dataElement;
+    private WebElement dataElement;
 
     @FindBy(xpath = "//*[@for='agreement']")//@FindBy(id = "agreement")
-    private static WebElement agreementElement;
+    private WebElement agreementElement;
 
     @FindBy(xpath = "//*[@class='modal-footer']//input")
-    private static WebElement registerElement;
+    private WebElement registerElement;
 
     @FindBy(className = "register-view white-side has-social-login")
-    public static WebElement regWindowElement;
+    private WebElement regWindowElement;
 
-    public void initInstance(String siteURL) {
+    /*public void initInstance(String siteURL) {
         setURL(siteURL);
         //start();
-    }
+    }*/
 
     public String getSiteUrl() {
         return siteUrl;
@@ -118,7 +118,7 @@ public class RegPage extends Pagebase {
         getApp().getWait().until(ExpectedConditions.invisibilityOf(dataWindowElement));
     }
 
-    public static void pushAgreement() throws Exception {
+    public  void pushAgreement() throws Exception {
         agreementElement.click();
     }
 
@@ -142,7 +142,7 @@ public class RegPage extends Pagebase {
         try
         {
             getApp().getWait().until(ExpectedConditions.elementToBeClickable(profileNameElement));
-            driver.findElement(By.className("register-view white-side has-social-login"));
+            getApp().getDriver().findElement(By.className("register-view white-side has-social-login"));
             //regWindowElement;???
         }
         catch (Exception e)

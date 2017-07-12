@@ -2,7 +2,6 @@ package basesrc.pages;
 
 import basesrc.core.AppManager;
 import lombok.Data;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,10 +12,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Created by andrey.popov on 06.07.2017.
  */
 @Data
-public class Pagebase extends AppManager{
+public class Pagebase {
 
-    public static String siteUrl="https://libertex-fxb3-test.web.test.fxclub.org/";
-    public AppManager app;
+    protected String siteUrl="https://libertex-fxb3-test.web.test.fxclub.org/";
+    private AppManager app;
     public WebDriverWait wait;
 
     /*public WebDriver getDriver()
@@ -45,11 +44,6 @@ public class Pagebase extends AppManager{
 
     public Pagebase(AppManager app){
         this.app = app;
-    }
-
-    public void setDriver(WebDriver driv)
-    {
-        this.driver = driv;
     }
 
     public String getURL()

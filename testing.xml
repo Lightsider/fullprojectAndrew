@@ -1,9 +1,12 @@
-<suite name="TestSuite" verbose="1" parallel="classes" thread-count="3">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" verbose="1" parallel="classes" thread-count="2">
     <test name="TestParallel" >
         <classes>
-            <class name="tests.registration.shortform.TestShortValid"></class>
-            <class name="tests.registration.shortform.TestShortInvalid"></class>
-            <class name="tests.registration.shortform.TestShortWithoutPush"></class>
+            <class name="tests.registration.longform.TestValid"></class>
+            <class name="tests.registration.longform.TestInvalid"></class>
+            <class name="tests.registration.longform.TestWithoutPush"></class>
         </classes>
     </test>
 </suite>
