@@ -18,7 +18,7 @@ public class Testbase {
         //capabilities.setPlatform(Platform.LINUX);
         app = new AppManager();
         //System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
-        app.setDriver(new RemoteWebDriver(new URL("http://192.168.99.100:32770/wd/hub"),DesiredCapabilities.firefox()));
+        app.setDriver(new RemoteWebDriver(new URL("http://192.168.99.100:8888/wd/hub"),DesiredCapabilities.firefox()));
         app.setWait(new WebDriverWait(app.getDriver(),12));
     }
 
