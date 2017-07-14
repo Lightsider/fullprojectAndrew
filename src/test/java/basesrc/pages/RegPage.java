@@ -3,6 +3,7 @@ package basesrc.pages;
 import basesrc.core.AppManager;
 import lombok.Data;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,6 +24,7 @@ public class RegPage extends Pagebase {
     {
         super(app);
         PageFactory.initElements(getApp().getDriver(), this);
+        getApp().getDriver().manage().window().setSize(new Dimension(1366,1000));
         getApp().getDriver().manage().window().maximize();
     }
 

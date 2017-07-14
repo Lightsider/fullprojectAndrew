@@ -2,10 +2,18 @@ package tests.registration.longform;
 
 import basesrc.core.Testbase;
 import basesrc.pages.RegPage;
+import org.apache.commons.io.FileUtils;
 import org.assertj.core.api.Assertions;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by andrey.popov on 05.07.2017.
@@ -52,8 +60,18 @@ public class TestValid extends Testbase {
         selectPage.pushCloseRegWindow();
     }*/
 
+   @AfterMethod(alwaysRun = true)
+           public void afterMethod(ITestResult testResult) throws IOException
+   {
+       if(!testResult.isSuccess()){
+           File scrFile = ((TakesScreenshot)getApp().getDriver()).getScreenshotAs(OutputType.FILE);
+           FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
+       }
+   }
+
     @AfterClass(alwaysRun = true)
-    public void after(){
+    public void after() {
+
         selectPage.close();
     }
 

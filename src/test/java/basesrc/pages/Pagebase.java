@@ -57,7 +57,7 @@ public class Pagebase {
     public void close() {
         getApp().getDriver().close();
         //getApp().getDriver().
-        getApp().getDriver().manage().deleteAllCookies();
+        //getApp().getDriver().manage().deleteAllCookies();
         //getApp().getDriver().manage().;
     }
 
