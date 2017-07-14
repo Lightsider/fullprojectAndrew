@@ -1,5 +1,6 @@
 package basesrc.core;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,12 +14,15 @@ public class Testbase {
 
     @BeforeClass(alwaysRun = true)
     public void init() throws  Exception {
-        //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        //capabilities.setBrowserName("firefox");
-        //capabilities.setPlatform(Platform.LINUX);
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setBrowserName("firefox");
+        capabilities.setCapability("seleniumProtocol","WebDriver");
+        capabilities.setCapability("jenkins.nodeName","(master)");
+        capabilities.setCapability("maxInstances","2");
+        capabilities.setPlatform(Platform.LINUX);
         app = new AppManager();
         //System.setProperty("webdriver.gecko.driver", "C:\\Users\\andrey.popov\\IdeaProjects\\mytest\\geckodriver.exe");
-        app.setDriver(new RemoteWebDriver(new URL("http://192.168.99.100:8888/wd/hub"),DesiredCapabilities.firefox()));
+        app.setDriver(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"),capabilities));
         app.setWait(new WebDriverWait(app.getDriver(),12));
     }
 
