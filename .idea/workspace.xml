@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69aceb0f-cb02-4dac-9554-d7b0f2c8e80e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/basesrc/other/function.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/basesrc/core/Testbase.java" afterPath="$PROJECT_DIR$/src/test/java/basesrc/core/Testbase.java" />
     </list>
@@ -47,10 +48,12 @@
       <file leaf-file-name="Testbase.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/basesrc/core/Testbase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+            <state relative-caret-position="340">
+              <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1500006109680" expanded="false" signature="1132:1142" ph=" { " />
+                <marker date="1500006109680" expanded="false" signature="1153:1159" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -387,6 +390,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fullprojectAndrew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fullprojectAndrew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -403,18 +420,18 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/TestRegShortForm.xml&#10;true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew" />
+      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\src\basesrc\java" />
+      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\src\test\java" />
+      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\src\basesrc" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew" />
       <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\.idea" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew" />
-      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\src\basesrc\java" />
-      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\src\test\java" />
-      <recent name="C:\Users\andrey.popov\IdeaProjects\fullprojectAndrew\src\basesrc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1109,7 +1126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499935372170</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="13.07.2017 15:00&#10;Добавлена работа через Grid">
+      <created>1500005950771</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1500005950771</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1240,6 +1264,8 @@
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1500006109680" expanded="false" signature="1132:1142" ph=" { " />
+            <marker date="1500006109680" expanded="false" signature="1153:1159" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1574,10 +1600,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/basesrc/core/Testbase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        <state relative-caret-position="340">
+          <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1500006109680" expanded="false" signature="1132:1142" ph=" { " />
+            <marker date="1500006109680" expanded="false" signature="1153:1159" ph=" }" />
           </folding>
         </state>
       </provider>
